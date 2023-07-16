@@ -12,13 +12,20 @@ function Login() {
     const navigate = useNavigate();
 
     const handleLogin = () => {
-        if (email === '' || password === '') {
-          alert(t('alert1'));
-          return;
-        }
+        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     
+        if (email === '' || password === '') {
+            alert(t('alert1'));
+            return;
+        }
+
+        if (!emailRegex.test(email)) {
+            alert(t('alert4'));
+            return;
+        }
+      
         navigate('/main');
-    };
+    };    
 
     return (
         <div className="login-container">

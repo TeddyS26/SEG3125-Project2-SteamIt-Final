@@ -36,6 +36,18 @@ function SignUp() {
       return;
     }
 
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (!emailRegex.test(formData.email)) {
+      alert(t('alert4'));
+      return;
+    }
+
+    const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      alert(t('alert5'));
+      return;
+    }
+
     navigate('/subscribe');
   };
 

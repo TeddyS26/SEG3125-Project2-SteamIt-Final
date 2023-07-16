@@ -37,7 +37,7 @@ const Subscribe = () => {
 
     const handlePlanChange = (event) => {
         setPlan(event.target.value);
-        switch(event.target.value) {
+        switch (event.target.value) {
             case 'Basic':
                 setPrice(t('basicPlanPrice'));
                 setImage(basic);
@@ -61,11 +61,45 @@ const Subscribe = () => {
     };
 
     const handleSubmit = () => {
+        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+        const phoneNumberRegex = /^\d{3}-\d{3}-\d{4}$/;
+        const cardNumberRegex = /^\d{16}$/;
+        const expiryDateRegex = /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/;
+        const cvcRegex = /^[0-9]{3,4}$/;
         const isFormComplete = Object.values(formData).every(val => val !== '') && plan !== 'None';
+        const isValidEmail = emailRegex.test(formData.email);
+        const isValidPhoneNumber = phoneNumberRegex.test(formData.phoneNumber);
+        const isValidCardNumber = cardNumberRegex.test(formData.cardNumber);
+        const isValidExpiryDate = expiryDateRegex.test(formData.expiryDate);
+        const isValidCvc = cvcRegex.test(formData.cvc);
+
+        if (!isValidEmail) {
+            alert(t('alert4'));
+            return;
+        }
+
+        if (!isValidPhoneNumber) {
+            alert(t('alert5'));
+            return;
+        }
+
+        if (!isValidCardNumber) {
+            alert(t('alert6'));
+            return;
+        }
+
+        if (!isValidExpiryDate) {
+            alert(t('alert7'));
+            return;
+        }
+
+        if (!isValidCvc) {
+            alert(t('alert8'));
+            return;
+        }
 
         if (isFormComplete) {
             setShowModal(true);
-
             setTimeout(() => {
                 setShowModal(false);
                 navigate('/main');
@@ -105,7 +139,7 @@ const Subscribe = () => {
                             <input type="text" name="name" placeholder={t('name')} onChange={handleInputChange} value={formData.name} />
                             <input type="email" name="email" placeholder={t('email')} onChange={handleInputChange} value={formData.email} />
                             <input type="tel" name="phoneNumber" placeholder={t('number')} onChange={handleInputChange} value={formData.phoneNumber} />
-                            <input type="text" name="address" placeholder={t('address')}onChange={handleInputChange} value={formData.address} />
+                            <input type="text" name="address" placeholder={t('address')} onChange={handleInputChange} value={formData.address} />
                         </form>
                     </div>
                     <div className="subscribe-button-container">
