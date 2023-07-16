@@ -67,7 +67,7 @@ const Main = () => {
                 <div className="flag-container">
                     <img
                         src={i18n.language === 'en' ? canadianFlag : frenchFlag}
-                        alt="Flag"
+                        alt="change language"
                         onClick={() => changeLanguage(i18n.language === 'en' ? 'fr' : 'en')}
                     />
                 </div>
@@ -76,10 +76,10 @@ const Main = () => {
                 </div>
             </div>
             <div className="main-image">
-                <img src={photo} alt="Main" />
+                <img src={photo} alt="spider-man background" />
                 <div className="main-image-content">
                     <div className="movie-title-image">
-                        <img src={titleImage} alt="Movie Title" />
+                        <img src={titleImage} alt="Spider-man: Into the Spider-Verse" />
                     </div>
                     <div className="movie-details">
                         <h2>{t('mostwatched')}</h2>

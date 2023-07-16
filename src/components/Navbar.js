@@ -18,7 +18,7 @@ const Navbar = () => {
         <nav className="navbar">
             <NavLink to="/" className="navbar-brand">
                 StreamIt
-                <img src={i18n.language === 'en' ? canadianFlag : frenchFlag} alt="Flag" style={{ width: '30px', height: '20px', marginLeft: '10px', border: '2px solid black' }} onClick={() => changeLanguage(i18n.language === 'en' ? 'fr' : 'en')} />
+                <img src={i18n.language === 'en' ? canadianFlag : frenchFlag} alt="change language" style={{ width: '30px', height: '20px', marginLeft: '10px', border: '2px solid black' }} onClick={() => changeLanguage(i18n.language === 'en' ? 'fr' : 'en')} />
             </NavLink>
             <div className="nav-links">
                 <NavLink to="/plans" className={location.pathname === "/plans" ? "activeLink" : ""}>{t('plans')}</NavLink>
