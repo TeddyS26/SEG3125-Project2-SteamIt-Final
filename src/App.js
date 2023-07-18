@@ -22,7 +22,7 @@ function App() {
         <Route path="/login" element={<WithNavbar component={Login} />} />
         <Route path="/signup" element={<WithNavbar component={SignUp} />} />
         <Route path="/main" element={<Main />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
       </div>
     </Router>
