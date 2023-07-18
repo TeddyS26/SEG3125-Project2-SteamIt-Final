@@ -8,19 +8,21 @@ import Subscribe from './components/Subscribe';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Main from './components/Main';
+import NotFoundPage from './components/NotFoundPage';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/*" element={<WithNavbar component={Home} />} />
+          <Route path="/" element={<WithNavbar component={Home} />} />
           <Route path="/plans" element={<WithNavbar component={Plans} />} />
           <Route path="/movies-shows" element={<WithNavbar component={MoviesShows} />} />
           <Route path="/subscribe" element={<WithNavbar component={Subscribe} />} />
           <Route path="/login" element={<WithNavbar component={Login} />} />
           <Route path="/signup" element={<WithNavbar component={SignUp} />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </div>
     </Router>
