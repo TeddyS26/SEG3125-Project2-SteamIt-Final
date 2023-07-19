@@ -159,7 +159,7 @@ const Subscribe = () => {
             {showModal && (
                 <div className="modal">
                     <div className="modal-content">
-                        <p>Subscription Successful!</p>
+                        <p>{t('succesful')}</p>
                     </div>
                 </div>
             )}

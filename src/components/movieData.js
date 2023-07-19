@@ -19,7 +19,6 @@ import movie18 from './images/bnn.jpg';
 import movie19 from './images/to.jpeg';
 import movie20 from './images/vs.jpg';
 import movie21 from './images/sm.jpg';
-import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 
 const useMovieData = () => {

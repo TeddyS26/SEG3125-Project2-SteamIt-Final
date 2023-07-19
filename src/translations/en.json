@@ -147,5 +147,6 @@
     "planColon": "Plan: ",
     "priceColon": "Price: ",
     "remove": "Remove from Watchlist",
-    "add": "Add to Watchlist"
+    "add": "Add to Watchlist",
+    "succesful": "Subscription Successful!"
 }
